@@ -5,7 +5,7 @@ manifests:
     - ./infra/k8s/*
 build:
   local:
-    push: false
+    push: true
   artifacts:
     - image: robertbehmdemo/client
       context: client
@@ -31,8 +31,8 @@ build:
         manual:
           - src: "*.js"
             dest: .
-    - image: robertbehmdemo/query
-      context: query
+    - image: robertbehmdemo/posts
+      context: posts
       docker:
         dockerfile: Dockerfile
       sync:
@@ -41,6 +41,14 @@ build:
             dest: .
     - image: robertbehmdemo/comments
       context: comments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "*.js"
+            dest: .
+    - image: robertbehmdemo/event-bus
+      context: event-bus
       docker:
         dockerfile: Dockerfile
       sync:
