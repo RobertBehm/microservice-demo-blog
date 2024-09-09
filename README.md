@@ -1,6 +1,3 @@
-# Microservice Application Demo
-
-This repository is a demo project showcasing how to use Docker and Kubernetes to build, deploy, and manage a microservice application.
 
 ## Overview
 
